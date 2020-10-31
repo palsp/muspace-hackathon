@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons solt="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="content">
+    <ion-card-content>
+      <ion-header class="header">
+        <p>Harvest Moon Image Processing</p>
+      </ion-header>
+
+      <!-- <div class="row margin25">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="input-group"> -->
+
+      <ion-item>
+        <span class="input-group-text upload" (click)="upload()" id="btnUpload"
+          >Upload</span
+        >
+        <ion-card class="custom-file">
+          <form
+            action="/api/upload"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <input
+              (change)="fileChange($event)"
+              type="file"
+              class="custom-file-input"
+              id="inputGroupFile01"
+              aria-describedby="inputGroupFileAddon01"
+            />
+          </form>
+          <label class="custom-file-label" for="inputGroupFile01"></label>
+        </ion-card>
+      </ion-item>
+      <!-- </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div> -->
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="toggler">
+    <div style="text-align: center">
+      <p>
+        This is {{displayName}} with a confident score of {{confidentScore}}
+      </p>
+    </div>
+    <div *ngIf="displayName">
+      <ion-button (click)="updateStatus()">Update Status</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

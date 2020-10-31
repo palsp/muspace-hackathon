@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>manage</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label> Plant</ion-label>
+      <ion-select slot="end" interface="popover" [(ngModel)]="order.harvest">
+        <ion-select-option value="red">RED</ion-select-option>
+        <ion-select-option value="Green">Green</ion-select-option>
+        <ion-select-option value="Blue">Blue</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label> Water</ion-label>
+      <ion-input
+        slot="end"
+        type="number"
+        placeholder="amount of water per day"
+        [(ngModel)]="order.water"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label> Heat</ion-label>
+      <ion-input
+        slot="end"
+        type="number"
+        placeholder="amount of sunlight per day"
+        [(ngModel)]="order.heat"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label> Order by</ion-label>
+      <ion-input slot="end" placeholder="name" [(ngModel)]="user"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-fab horizontal="end" vertical="bottom">
+  <ion-fab-button (click)="Book()">Save</ion-fab-button>
+</ion-fab>

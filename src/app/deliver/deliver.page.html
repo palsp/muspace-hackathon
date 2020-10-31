@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Deliver</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<div #map id="map"></div>
+<ion-content>
+  <ion-text> Please fill the delivering details </ion-text>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime
+      value="2020-08-29"
+      min="2020-02"
+      max="2040"
+      [dayShortNames]="customDayShortNames"
+      displayFormat="DDD. MMM DD, YY"
+      monthShortNames="jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des"
+    ></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Time</ion-label>
+    <ion-datetime displayFormat="HH:mm"></ion-datetime>
+  </ion-item>
+
+  <ion-button (click)="presentAlert()" fill="clear">
+    <ion-label>Done</ion-label>
+  </ion-button>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>harvest</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-button slot="end" [routerLink]='["/deliver",43]'
+      >Deliver To
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of users ">
+      <ion-item lines="inset">
+        <ion-label>
+          <p>Harvest : {{item.harvest}}</p>
+          <p>PlantNo : {{item.plantNo}}</p>
+          <p>PlantSize : {{item.size}}</p>
+          <p>Status : {{item.status}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

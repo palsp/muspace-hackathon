@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Harvest Moon </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login"> Logout </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div #map id="map"></div>
+  <ion-item *ngIf="checkMark">
+    <ion-button [routerLink]="['/harvest',42]">Harvest</ion-button>
+  </ion-item>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of user | async">
+      <ion-item
+        lines="inset"
+        button
+        [routerLink]="['/upload-image',item.id,'x']"
+      >
+        <ion-label>
+          <p>Harvest : {{item.harvest}}</p>
+          <p>PlantNo : {{item.plant}}</p>
+          <p>PlantSize : {{item.size}}</p>
+          <p>Status : {{item.status}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

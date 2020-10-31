@@ -1,0 +1,1 @@
+web: concurrently \"npm run server\" \"ionic serve --lab -- --proxy-config proxy.conf.json\"

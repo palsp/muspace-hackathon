@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Register </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color>
+  <form #form="ngForm" (ngSubmit)="register(form)">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Create your account!</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input
+                name="name"
+                type="text"
+                placeholder="Name"
+                ngModel
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                name="email"
+                type="email"
+                placeholder="Username"
+                ngModelionic
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                name="password"
+                type="password"
+                placeholder="Password"
+                ngModel
+                required
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                name="confirm"
+                type="password"
+                placeholder="Password again"
+                ngModel
+                required
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button
+              size="large"
+              type="submit"
+              [disabled]="form.invalid"
+              expand="block"
+              routerLink="/login"
+              >Register</ion-button
+            >
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--<img
+      src="https://i.ibb.co/djK7yxr/LOGO.png"
+      alt="Havest-Moon-removebg-preview-1"
+    /> -->
+  </form>
+</ion-content>
